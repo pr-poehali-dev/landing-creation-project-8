@@ -114,16 +114,16 @@ const EarningsCalculator = ({ yandexEdaLink }: EarningsCalculatorProps) => {
               </div>
             </div>
 
-            <div className="border-2 border-primary/30 rounded-lg p-4 bg-yellow-400">
-              <div className="text-center space-y-2">
+            <div className="bg-primary/10 border-2 border-primary/30 rounded-lg p-4">
+              <div className="text-center space-y-3">
                 <div>
-                  <p className="text-slate-800 text-2xl">Доход в день</p>
-                  <p className="text-2xl font-bold text-primary">
+                  <p className="text-xs text-muted-foreground">Доход в день</p>
+                  <p className="text-3xl font-bold text-primary">
                     {earningsPerDay.toLocaleString('ru-RU')} ₽
                   </p>
                 </div>
-                <div className="border-t-2 border-primary/20 pt-2">
-                  <p className="text-slate-800 text-xl">Доход в месяц (22 дня)</p>
+                <div className="border-t-2 border-primary/20 pt-3">
+                  <p className="text-xs text-muted-foreground">Доход в месяц (22 дня)</p>
                   <p className="text-4xl font-bold">
                     {earningsPerMonth.toLocaleString('ru-RU')} ₽
                   </p>
