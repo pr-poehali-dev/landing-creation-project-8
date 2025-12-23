@@ -42,24 +42,24 @@ const EarningsCalculator = ({ yandexEdaLink }: EarningsCalculatorProps) => {
   const earningsPerMonth = earningsPerDay * 22;
 
   return (
-    <section id="calculator" className="py-12 md:py-16 bg-gradient-to-b from-primary/5 to-background">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center mb-8">
+    <section id="calculator" className="py-8 md:py-12 bg-gradient-to-b from-primary/5 to-background">
+      <div className="container mx-auto px-4 md:px-6 max-w-7xl">
+        <div className="text-center mb-6">
           <h2 className="text-3xl md:text-4xl font-bold mb-3">Калькулятор заработка</h2>
           <p className="text-base text-muted-foreground max-w-2xl mx-auto">
             Рассчитай свой потенциальный доход за месяц
           </p>
         </div>
         
-        <Card className="max-w-4xl mx-auto border-2 border-primary/20 shadow-xl bg-gradient-to-br from-background to-primary/5">
-          <CardHeader className="text-center pb-4 md:pb-6">
-            <h3 className="text-lg md:text-xl font-semibold mb-3 md:mb-4">Выбери тип курьера</h3>
-            <div className="grid grid-cols-3 gap-2 md:gap-4">
+        <Card className="mx-auto border-2 border-primary/20 shadow-xl bg-gradient-to-br from-background to-primary/5">
+          <CardHeader className="text-center pb-3 md:pb-4">
+            <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3">Выбери тип курьера</h3>
+            <div className="grid grid-cols-3 gap-3 md:gap-6">
               {(Object.keys(courierData) as CourierType[]).map((type) => (
                 <button
                   key={type}
                   onClick={() => setCourierType(type)}
-                  className={`flex flex-col items-center gap-2 md:gap-3 p-2 md:p-4 rounded-xl transition-all border-2 overflow-hidden ${
+                  className={`flex flex-col items-center gap-1.5 md:gap-2 p-2 md:p-3 rounded-xl transition-all border-2 overflow-hidden ${
                     courierType === type
                       ? 'border-primary shadow-lg scale-105'
                       : 'border-border hover:border-primary/50'
@@ -72,15 +72,15 @@ const EarningsCalculator = ({ yandexEdaLink }: EarningsCalculatorProps) => {
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <span className="text-xs md:text-sm font-semibold">{courierData[type].title}</span>
+                  <span className="text-xs md:text-sm font-semibold whitespace-nowrap">{courierData[type].title}</span>
                 </button>
               ))}
             </div>
           </CardHeader>
           
-          <CardContent className="space-y-4 md:space-y-6">
-            <div className="bg-muted/30 rounded-xl p-4 md:p-6">
-              <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-3 md:gap-0 mb-4">
+          <CardContent className="space-y-3 md:space-y-4">
+            <div className="bg-muted/30 rounded-xl p-3 md:p-4">
+              <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-2 md:gap-0 mb-3">
                 <label className="text-base md:text-lg font-semibold">Сколько часов готов работать?</label>
                 <div className="flex items-center gap-2 rounded-lg px-4 py-2 bg-primary self-start">
                   <span className="text-2xl md:text-3xl font-bold text-secondary">{hours}</span>
@@ -101,11 +101,11 @@ const EarningsCalculator = ({ yandexEdaLink }: EarningsCalculatorProps) => {
               </div>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-4 md:gap-6">
-              <div className="bg-primary rounded-xl p-4 md:p-6 text-secondary">
+            <div className="grid md:grid-cols-2 gap-3 md:gap-4">
+              <div className="bg-primary rounded-xl p-3 md:p-4 text-secondary">
                 <div className="text-center">
-                  <p className="text-xs md:text-sm font-medium mb-2">Доход в день</p>
-                  <p className="text-3xl md:text-4xl font-bold mb-3 md:mb-4">
+                  <p className="text-xs md:text-sm font-medium mb-1">Доход в день</p>
+                  <p className="text-3xl md:text-4xl font-bold mb-2">
                     {earningsPerDay.toLocaleString('ru-RU')} ₽
                   </p>
                   <div className="space-y-1 text-xs text-secondary/80">
@@ -125,10 +125,10 @@ const EarningsCalculator = ({ yandexEdaLink }: EarningsCalculatorProps) => {
                 </div>
               </div>
               
-              <div className="bg-gradient-to-br from-primary to-primary/80 rounded-xl p-4 md:p-6 text-secondary">
+              <div className="bg-gradient-to-br from-primary to-primary/80 rounded-xl p-3 md:p-4 text-secondary">
                 <div className="text-center">
-                  <p className="text-xs md:text-sm font-medium mb-2">Доход в месяц</p>
-                  <p className="text-4xl md:text-5xl font-bold mb-2">
+                  <p className="text-xs md:text-sm font-medium mb-1">Доход в месяц</p>
+                  <p className="text-4xl md:text-5xl font-bold mb-1">
                     {earningsPerMonth.toLocaleString('ru-RU')} ₽
                   </p>
                   <p className="text-xs text-secondary/80">при 22 рабочих днях</p>
