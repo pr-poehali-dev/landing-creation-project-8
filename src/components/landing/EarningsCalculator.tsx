@@ -78,9 +78,9 @@ const EarningsCalculator = ({ yandexEdaLink }: EarningsCalculatorProps) => {
             <div>
               <div className="flex justify-between items-center mb-3">
                 <label className="text-base font-semibold">Часов работы в день</label>
-                <div className="flex items-center gap-2">
-                  <span className="text-2xl font-bold text-primary">{hours}</span>
-                  <span className="text-base text-muted-foreground">ч</span>
+                <div className="flex items-center gap-2 rounded-lg px-5 bg-amber-300">
+                  <span className="text-2xl font-bold text-[#000000]">{hours}</span>
+                  <span className="text-base text-[#000000]">ч</span>
                 </div>
               </div>
               <Slider
