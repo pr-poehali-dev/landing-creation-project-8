@@ -20,29 +20,31 @@ const InfoSections = ({ yandexEdaLink }: InfoSectionsProps) => {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {[
               {
-                icon: '💰',
+                iconName: 'DollarSign',
                 title: 'Высокий доход',
                 description: 'От 2000 ₽ за смену + бонусы и чаевые'
               },
               {
-                icon: '⏰',
+                iconName: 'Clock',
                 title: 'Гибкий график',
                 description: 'Работай когда удобно — выбирай смены сам'
               },
               {
-                icon: '⚡',
+                iconName: 'Zap',
                 title: 'Быстрые выплаты',
                 description: 'Выводи деньги на карту каждый день'
               },
               {
-                icon: '📱',
+                iconName: 'Smartphone',
                 title: 'Простое приложение',
                 description: 'Всё в одном приложении — заказы, навигация, оплата'
               }
             ].map((item, index) => (
               <Card key={index} className="bg-white/10 border-white/20 backdrop-blur-sm hover:bg-white/15 transition-all">
                 <CardHeader>
-                  <div className="text-5xl mb-3">{item.icon}</div>
+                  <div className="w-14 h-14 rounded-lg bg-primary flex items-center justify-center mb-3">
+                    <Icon name={item.iconName} size={28} className="text-secondary" />
+                  </div>
                   <CardTitle className="text-xl text-white">{item.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
