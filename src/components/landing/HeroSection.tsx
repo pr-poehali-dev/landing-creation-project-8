@@ -50,7 +50,7 @@ const HeroSection = ({ yandexEdaLink }: HeroSectionProps) => {
               </Badge>
               <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
                 Зарабатывай<br />
-                <span className="text-primary">до 200 000 ₽</span><br />
+                <span className="text-primary">до 270 000 ₽</span><br />
                 в месяц
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
