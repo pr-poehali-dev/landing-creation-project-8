@@ -18,6 +18,12 @@ const HeroSection = ({ yandexEdaLink }: HeroSectionProps) => {
               </div>
               <span className="text-xl md:text-2xl font-bold">Яндекс Еда</span>
             </div>
+            <nav className="hidden md:flex items-center gap-6 mr-6">
+              <a href="#advantages" className="text-sm font-medium hover:text-primary transition-colors">Преимущества</a>
+              <a href="#reviews" className="text-sm font-medium hover:text-primary transition-colors">Отзывы</a>
+              <a href="#calculator" className="text-sm font-medium hover:text-primary transition-colors">Калькулятор</a>
+              <a href="#faq" className="text-sm font-medium hover:text-primary transition-colors">Вопросы</a>
+            </nav>
             <Button size="lg" className="bg-primary hover:bg-primary/90 text-secondary font-semibold" asChild>
               <a href={yandexEdaLink} target="_blank" rel="noopener noreferrer">
                 Стать курьером
@@ -35,7 +41,7 @@ const HeroSection = ({ yandexEdaLink }: HeroSectionProps) => {
           backgroundPosition: 'center',
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/70"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/98 to-background/90"></div>
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in">

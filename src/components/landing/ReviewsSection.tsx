@@ -9,7 +9,7 @@ interface ReviewsSectionProps {
 
 const ReviewsSection = ({ yandexEdaLink }: ReviewsSectionProps) => {
   return (
-    <section className="py-16 md:py-20 bg-background">
+    <section id="reviews" className="py-16 md:py-20 bg-background">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Отзывы наших курьеров</h2>
@@ -55,7 +55,7 @@ const ReviewsSection = ({ yandexEdaLink }: ReviewsSectionProps) => {
                   <div className="flex-1">
                     <CardTitle className="text-lg mb-1">{review.name}, {review.age}</CardTitle>
                     <p className="text-sm text-muted-foreground">Работает {review.experience}</p>
-                    <Badge className="mt-2 bg-primary/20 text-primary border-primary/30">
+                    <Badge className="mt-2 bg-primary text-secondary border-primary font-semibold">
                       {review.earnings}
                     </Badge>
                   </div>

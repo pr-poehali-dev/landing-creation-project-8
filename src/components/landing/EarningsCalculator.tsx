@@ -45,7 +45,7 @@ const EarningsCalculator = ({ yandexEdaLink }: EarningsCalculatorProps) => {
   const earningsPerMonth = earningsPerDay * 22;
 
   return (
-    <section className="py-16 md:py-20 bg-gradient-to-b from-primary/5 to-background">
+    <section id="calculator" className="py-16 md:py-20 bg-gradient-to-b from-primary/5 to-background">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Калькулятор заработка</h2>
@@ -54,27 +54,27 @@ const EarningsCalculator = ({ yandexEdaLink }: EarningsCalculatorProps) => {
           </p>
         </div>
         
-        <Card className="max-w-4xl mx-auto border-2 border-primary/20 shadow-xl">
-          <CardHeader className="text-center">
-            <div className="flex justify-center gap-3 mb-6">
+        <Card className="max-w-3xl mx-auto border-2 border-primary/20 shadow-xl">
+          <CardHeader className="text-center pb-4">
+            <div className="flex justify-center gap-2">
               {(Object.keys(courierData) as CourierType[]).map((type) => (
                 <button
                   key={type}
                   onClick={() => setCourierType(type)}
-                  className={`flex flex-col items-center gap-2 p-4 rounded-xl transition-all ${
+                  className={`flex flex-col items-center gap-1 p-3 rounded-lg transition-all ${
                     courierType === type
                       ? 'bg-primary text-secondary shadow-lg scale-105'
                       : 'bg-muted hover:bg-muted/80'
                   }`}
                 >
-                  <span className="text-4xl">{courierData[type].icon}</span>
-                  <span className="text-sm font-semibold">{courierData[type].title}</span>
+                  <span className="text-3xl">{courierData[type].icon}</span>
+                  <span className="text-xs font-semibold">{courierData[type].title}</span>
                 </button>
               ))}
             </div>
           </CardHeader>
           
-          <CardContent className="space-y-8">
+          <CardContent className="space-y-6">
             <div>
               <div className="flex justify-between items-center mb-4">
                 <label className="text-lg font-semibold">Часов работы в день</label>

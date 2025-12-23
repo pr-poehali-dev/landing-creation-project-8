@@ -9,7 +9,7 @@ interface InfoSectionsProps {
 const InfoSections = ({ yandexEdaLink }: InfoSectionsProps) => {
   return (
     <>
-      <section className="py-16 md:py-20 bg-secondary text-white">
+      <section id="advantages" className="py-16 md:py-20 bg-secondary text-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Почему курьеры выбирают нас</h2>
@@ -162,7 +162,7 @@ const InfoSections = ({ yandexEdaLink }: InfoSectionsProps) => {
         </div>
       </section>
 
-      <section className="py-16 md:py-20 bg-background">
+      <section id="faq" className="py-16 md:py-20 bg-background">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Частые вопросы</h2>
