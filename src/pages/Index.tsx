@@ -1,18 +1,11 @@
-import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import Icon from '@/components/ui/icon';
 
+const YANDEX_EDA_LINK = 'https://reg.eda.yandex.ru/?advertisement_campaign=forms_for_agents&user_invite_code=97ea05f4a54f41f59d3b2aafca5efea2&utm_content=blank';
+
 const Index = () => {
-  const [phone, setPhone] = useState('');
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Phone submitted:', phone);
-  };
-
   return (
     <div className="min-h-screen bg-background">
       <header className="border-b border-border bg-background sticky top-0 z-50 backdrop-blur-sm bg-background/95">
@@ -24,15 +17,25 @@ const Index = () => {
               </div>
               <span className="text-xl md:text-2xl font-bold">Яндекс Еда</span>
             </div>
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-secondary font-semibold">
-              Стать курьером
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-secondary font-semibold" asChild>
+              <a href={YANDEX_EDA_LINK} target="_blank" rel="noopener noreferrer">
+                Стать курьером
+              </a>
             </Button>
           </div>
         </div>
       </header>
 
-      <section className="py-16 md:py-24 bg-gradient-to-b from-primary/5 to-background">
-        <div className="container mx-auto px-4 md:px-6">
+      <section 
+        className="py-16 md:py-24 bg-gradient-to-b from-primary/5 to-background relative overflow-hidden"
+        style={{
+          backgroundImage: 'url(https://cdn.poehali.dev/projects/704f2599-c4d3-472d-9589-891236468e4c/files/6acec86d-962a-4597-8971-891a14bc05fb.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/70"></div>
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in">
               <Badge className="mb-6 bg-primary/20 text-foreground border-primary/30 text-base px-4 py-1">
@@ -46,20 +49,12 @@ const Index = () => {
               <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
                 Работай курьером в Яндекс Еде — выбирай удобный график, получай деньги сразу и бонусы за каждый заказ
               </p>
-              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 mb-6">
-                <Input 
-                  type="tel"
-                  placeholder="+7 (___) ___-__-__"
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                  className="text-lg h-14 flex-1"
-                  required
-                />
-                <Button type="submit" size="lg" className="bg-primary hover:bg-primary/90 text-secondary font-semibold h-14 px-8 text-base">
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-secondary font-semibold h-14 px-8 text-base mb-6" asChild>
+                <a href={YANDEX_EDA_LINK} target="_blank" rel="noopener noreferrer">
                   Подать заявку
                   <Icon name="ArrowRight" size={20} className="ml-2" />
-                </Button>
-              </form>
+                </a>
+              </Button>
               <div className="flex flex-wrap gap-6 text-sm text-muted-foreground">
                 <div className="flex items-center gap-2">
                   <Icon name="Check" size={18} className="text-primary" />
@@ -75,14 +70,7 @@ const Index = () => {
                 </div>
               </div>
             </div>
-            <div className="relative animate-scale-in">
-              <div className="relative bg-gradient-to-br from-primary/20 to-primary/5 rounded-3xl p-8 md:p-12 min-h-[400px] flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-8xl mb-6">🛵</div>
-                  <p className="text-2xl font-semibold text-foreground">Начни зарабатывать уже сегодня</p>
-                </div>
-              </div>
-            </div>
+            <div className="lg:block hidden"></div>
           </div>
         </div>
       </section>
@@ -135,6 +123,75 @@ const Index = () => {
       <section className="py-16 md:py-20 bg-background">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Отзывы наших курьеров</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Реальные истории людей, которые зарабатывают с нами
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-12">
+            {[
+              {
+                name: 'Александр',
+                age: '24 года',
+                experience: '8 месяцев',
+                photo: 'https://cdn.poehali.dev/projects/704f2599-c4d3-472d-9589-891236468e4c/files/9afc87d1-8335-4903-8154-aa2ef1169f82.jpg',
+                text: 'Работаю после учёбы по 4-5 часов. За месяц выходит 70-80 тысяч, вполне хватает на жизнь. Главное — свободный график, сам выбираю когда выходить.',
+                earnings: '75 000 ₽/мес'
+              },
+              {
+                name: 'Мария',
+                age: '29 лет',
+                experience: '1 год',
+                photo: 'https://cdn.poehali.dev/projects/704f2599-c4d3-472d-9589-891236468e4c/files/bd5589e3-e1c7-4393-9b7c-528b2f58ef8a.jpg',
+                text: 'Ушла из офиса и не жалею! Работаю полный день, зарабатываю больше чем на прошлой работе. Люблю быть на свежем воздухе, плюс чаевые радуют.',
+                earnings: '140 000 ₽/мес'
+              },
+              {
+                name: 'Дмитрий',
+                age: '35 лет',
+                experience: '2 года',
+                photo: 'https://cdn.poehali.dev/projects/704f2599-c4d3-472d-9589-891236468e4c/files/74d81d66-1230-42c7-8161-3da79bd1799f.jpg',
+                text: 'Стабильный заработок и никакого начальника над головой. Работаю интенсивно, выхожу рано утром и до вечера. За месяц могу сделать до 200к, иногда больше.',
+                earnings: '190 000 ₽/мес'
+              }
+            ].map((review, index) => (
+              <Card key={index} className="border-border hover:shadow-lg transition-shadow">
+                <CardHeader>
+                  <div className="flex items-start gap-4">
+                    <img 
+                      src={review.photo} 
+                      alt={review.name}
+                      className="w-16 h-16 rounded-full object-cover"
+                    />
+                    <div className="flex-1">
+                      <CardTitle className="text-lg mb-1">{review.name}, {review.age}</CardTitle>
+                      <p className="text-sm text-muted-foreground">Работает {review.experience}</p>
+                      <Badge className="mt-2 bg-primary/20 text-primary border-primary/30">
+                        {review.earnings}
+                      </Badge>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground leading-relaxed">{review.text}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          <div className="text-center">
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-secondary font-semibold" asChild>
+              <a href={YANDEX_EDA_LINK} target="_blank" rel="noopener noreferrer">
+                Я тоже хочу так зарабатывать
+                <Icon name="ArrowRight" size={20} className="ml-2" />
+              </a>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 md:py-20 bg-muted/50">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Как начать работать</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Всего 3 простых шага до первого заказа
@@ -146,19 +203,19 @@ const Index = () => {
                 step: '1',
                 icon: 'FileText',
                 title: 'Заполни анкету',
-                description: 'Оставь номер телефона — с тобой свяжется менеджер и расскажет всё подробно'
+                description: 'Перейди по ссылке и заполни простую форму — это займёт 5 минут'
               },
               {
                 step: '2',
                 icon: 'UserCheck',
                 title: 'Пройди обучение',
-                description: 'Короткий онлайн-курс за 30 минут — узнаешь как работает приложение и что делать с заказами'
+                description: 'Короткий онлайн-курс за 30 минут — узнаешь как работает приложение'
               },
               {
                 step: '3',
                 icon: 'Bike',
                 title: 'Начни доставлять',
-                description: 'Выходи на линию в любое удобное время и зарабатывай с первого дня'
+                description: 'Выходи на линию в любое удобное время и зарабатывай'
               }
             ].map((item, index) => (
               <div key={index} className="relative">
@@ -183,7 +240,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-16 md:py-20 bg-muted/50">
+      <section className="py-16 md:py-20 bg-background">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Сколько можно заработать</h2>
@@ -238,7 +295,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-16 md:py-20 bg-background">
+      <section className="py-16 md:py-20 bg-muted/50">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Что нужно для старта</h2>
@@ -295,7 +352,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-16 md:py-20 bg-gradient-to-b from-primary/5 to-background">
+      <section className="py-16 md:py-20 bg-background">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Частые вопросы</h2>
@@ -350,25 +407,14 @@ const Index = () => {
               Готов начать зарабатывать?
             </h2>
             <p className="text-lg md:text-xl mb-8 text-secondary/80">
-              Оставь номер телефона — мы позвоним в течение часа и ответим на все вопросы
+              Нажми на кнопку ниже, заполни простую анкету и начни работать уже через 3 дня
             </p>
-            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto mb-6">
-              <Input 
-                type="tel"
-                placeholder="+7 (___) ___-__-__"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                className="text-lg h-14 flex-1 bg-white"
-                required
-              />
-              <Button type="submit" size="lg" className="bg-secondary hover:bg-secondary/90 text-white font-semibold h-14 px-8">
-                Отправить
-                <Icon name="Send" size={20} className="ml-2" />
-              </Button>
-            </form>
-            <p className="text-sm text-secondary/70">
-              Нажимая кнопку, ты соглашаешься с обработкой персональных данных
-            </p>
+            <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-white font-semibold h-14 px-8" asChild>
+              <a href={YANDEX_EDA_LINK} target="_blank" rel="noopener noreferrer">
+                Заполнить анкету
+                <Icon name="ExternalLink" size={20} className="ml-2" />
+              </a>
+            </Button>
           </div>
         </div>
       </section>
