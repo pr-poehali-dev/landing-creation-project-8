@@ -41,7 +41,7 @@ const HeroSection = ({ yandexEdaLink }: HeroSectionProps) => {
           backgroundPosition: 'center',
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/98 to-background/90"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/40"></div>
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in">
