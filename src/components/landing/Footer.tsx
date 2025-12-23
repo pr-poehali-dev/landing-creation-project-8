@@ -36,40 +36,35 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="font-semibold mb-4">Поделиться</h3>
-            <div className="flex gap-3 mb-4">
+            <h3 className="font-semibold mb-4">Поделиться страницей</h3>
+            <div className="space-y-2">
               <a 
                 href="https://wa.me/?text=Работай курьером в Яндекс Еда! Гибкий график и высокий доход" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-lg flex items-center justify-center transition-colors"
-                aria-label="Поделиться в WhatsApp"
+                className="flex items-center gap-3 px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors text-sm"
               >
                 <Icon name="MessageCircle" size={20} />
+                <span>WhatsApp</span>
               </a>
               <a 
                 href="https://t.me/share/url?url=&text=Работай курьером в Яндекс Еда! Гибкий график и высокий доход" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-lg flex items-center justify-center transition-colors"
-                aria-label="Поделиться в Telegram"
+                className="flex items-center gap-3 px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors text-sm"
               >
                 <Icon name="Send" size={20} />
+                <span>Telegram</span>
               </a>
               <a 
                 href="https://vk.com/share.php?url=&title=Работай курьером в Яндекс Еда!" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-lg flex items-center justify-center transition-colors"
-                aria-label="Поделиться ВКонтакте"
+                className="flex items-center gap-3 px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors text-sm"
               >
                 <Icon name="Share2" size={20} />
+                <span>ВКонтакте</span>
               </a>
-            </div>
-            <div className="flex flex-wrap gap-4 text-sm text-white/70">
-              <a href="#" className="hover:text-white transition-colors">Вакансии</a>
-              <a href="#" className="hover:text-white transition-colors">Поддержка</a>
-              <a href="#" className="hover:text-white transition-colors">Условия</a>
             </div>
           </div>
         </div>
