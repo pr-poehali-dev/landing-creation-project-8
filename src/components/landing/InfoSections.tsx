@@ -221,7 +221,7 @@ const InfoSections = ({ yandexEdaLink }: InfoSectionsProps) => {
             <p className="text-lg md:text-xl mb-8 text-secondary/80">
               Нажми на кнопку ниже, заполни простую анкету и начни работать уже через 3 дня
             </p>
-            <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-white font-semibold h-14 px-8" asChild>
+            <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-white font-semibold h-14 px-8 animate-pulse-scale" asChild>
               <a href={yandexEdaLink} target="_blank" rel="noopener noreferrer">
                 Заполнить анкету
                 <Icon name="ExternalLink" size={20} className="ml-2" />

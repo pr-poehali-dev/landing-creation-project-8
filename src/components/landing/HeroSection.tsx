@@ -24,7 +24,7 @@ const HeroSection = ({ yandexEdaLink }: HeroSectionProps) => {
               <a href="#calculator" className="text-sm font-medium hover:text-primary transition-colors">Калькулятор</a>
               <a href="#faq" className="text-sm font-medium hover:text-primary transition-colors">Вопросы</a>
             </nav>
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-secondary font-semibold" asChild>
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-secondary font-semibold animate-pulse-scale" asChild>
               <a href={yandexEdaLink} target="_blank" rel="noopener noreferrer">
                 Стать курьером
               </a>
@@ -61,7 +61,7 @@ const HeroSection = ({ yandexEdaLink }: HeroSectionProps) => {
               <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
                 Работай курьером в Яндекс Еде — выбирай удобный график, получай деньги сразу и бонусы за каждый заказ
               </p>
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-secondary font-semibold h-14 px-8 text-base mb-6" asChild>
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-secondary font-semibold h-14 px-8 text-base mb-6 animate-pulse-scale" asChild>
                 <a href={yandexEdaLink} target="_blank" rel="noopener noreferrer">
                   Подать заявку
                   <Icon name="ArrowRight" size={20} className="ml-2" />
