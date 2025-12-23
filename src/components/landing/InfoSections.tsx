@@ -165,7 +165,7 @@ const InfoSections = ({ yandexEdaLink }: InfoSectionsProps) => {
       </section>
 
       <section id="faq" className="py-16 md:py-20 bg-background">
-        <div className="container mx-auto px-4 md:px-6 bg-gray-200">
+        <div className="container mx-auto px-4 md:px-6 bg-gray-200 py-[35px]">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Частые вопросы</h2>
           </div>
