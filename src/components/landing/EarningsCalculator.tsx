@@ -52,39 +52,39 @@ const EarningsCalculator = ({ yandexEdaLink }: EarningsCalculatorProps) => {
         </div>
         
         <Card className="mx-auto border-2 border-primary/20 shadow-xl bg-gradient-to-br from-background to-primary/5">
-          <CardHeader className="text-center pb-2 md:pb-3">
-            <h3 className="text-base md:text-lg font-semibold mb-2">Выбери тип курьера</h3>
-            <div className="grid grid-cols-3 gap-3 md:gap-6">
+          <CardHeader className="text-center pb-2">
+            <h3 className="text-base md:text-lg font-semibold mb-1.5">Выбери тип курьера</h3>
+            <div className="grid grid-cols-3 gap-2 md:gap-4">
               {(Object.keys(courierData) as CourierType[]).map((type) => (
                 <button
                   key={type}
                   onClick={() => setCourierType(type)}
-                  className={`flex flex-col items-center gap-1.5 md:gap-2 p-2 md:p-3 rounded-xl transition-all border-2 overflow-hidden ${
+                  className={`flex flex-col items-center gap-1 p-1.5 md:p-2 rounded-lg transition-all border-2 overflow-hidden ${
                     courierType === type
                       ? 'border-primary shadow-lg scale-105'
                       : 'border-border hover:border-primary/50'
                   }`}
                 >
-                  <div className="w-full aspect-square rounded-lg overflow-hidden">
+                  <div className="w-full aspect-square rounded overflow-hidden">
                     <img 
                       src={courierData[type].image} 
                       alt={courierData[type].title}
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <span className="text-xs md:text-sm font-semibold whitespace-nowrap">{courierData[type].title}</span>
+                  <span className="text-[10px] md:text-xs font-semibold whitespace-nowrap">{courierData[type].title}</span>
                 </button>
               ))}
             </div>
           </CardHeader>
           
-          <CardContent className="space-y-3">
-            <div className="bg-muted/30 rounded-xl p-3">
-              <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-2 md:gap-0 mb-2">
-                <label className="text-sm md:text-base font-semibold">Сколько часов готов работать?</label>
-                <div className="flex items-center gap-2 rounded-lg px-3 py-1.5 bg-primary self-start">
-                  <span className="text-xl md:text-2xl font-bold text-secondary">{hours}</span>
-                  <span className="text-sm md:text-base text-secondary font-semibold">ч/день</span>
+          <CardContent className="space-y-2">
+            <div className="bg-muted/30 rounded-lg p-2">
+              <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-1.5 md:gap-0 mb-1.5">
+                <label className="text-xs md:text-sm font-semibold">Сколько часов готов работать?</label>
+                <div className="flex items-center gap-1.5 rounded px-2 py-1 bg-primary self-start">
+                  <span className="text-lg md:text-xl font-bold text-secondary">{hours}</span>
+                  <span className="text-xs md:text-sm text-secondary font-semibold">ч/день</span>
                 </div>
               </div>
               <Slider
@@ -95,20 +95,20 @@ const EarningsCalculator = ({ yandexEdaLink }: EarningsCalculatorProps) => {
                 step={1}
                 className="w-full"
               />
-              <div className="flex justify-between text-xs text-muted-foreground mt-2">
+              <div className="flex justify-between text-[10px] text-muted-foreground mt-1">
                 <span>1 час</span>
                 <span>12 часов</span>
               </div>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-3">
-              <div className="bg-primary rounded-xl p-3 text-secondary">
+            <div className="grid md:grid-cols-2 gap-2">
+              <div className="bg-primary rounded-lg p-2 text-secondary">
                 <div className="text-center">
-                  <p className="text-xs font-medium mb-1">Доход в день</p>
-                  <p className="text-2xl md:text-3xl font-bold mb-1">
+                  <p className="text-[10px] font-medium mb-0.5">Доход в день</p>
+                  <p className="text-xl md:text-2xl font-bold mb-0.5">
                     {earningsPerDay.toLocaleString('ru-RU')} ₽
                   </p>
-                  <div className="space-y-1 text-xs text-secondary/80">
+                  <div className="space-y-0.5 text-[10px] text-secondary/80">
                     <div className="flex justify-between">
                       <span>Заказов в час:</span>
                       <span className="font-semibold">{currentData.ordersPerHour}</span>
@@ -125,19 +125,19 @@ const EarningsCalculator = ({ yandexEdaLink }: EarningsCalculatorProps) => {
                 </div>
               </div>
               
-              <div className="bg-gradient-to-br from-primary to-primary/80 rounded-xl p-3 text-secondary">
+              <div className="bg-gradient-to-br from-primary to-primary/80 rounded-lg p-2 text-secondary">
                 <div className="text-center">
-                  <p className="text-xs font-medium mb-1">Доход в месяц</p>
-                  <p className="text-3xl md:text-4xl font-bold mb-1">
+                  <p className="text-[10px] font-medium mb-0.5">Доход в месяц</p>
+                  <p className="text-2xl md:text-3xl font-bold mb-0.5">
                     {earningsPerMonth.toLocaleString('ru-RU')} ₽
                   </p>
-                  <p className="text-xs text-secondary/80">при 22 рабочих днях</p>
+                  <p className="text-[10px] text-secondary/80">22 рабочих дня</p>
                 </div>
               </div>
             </div>
 
-            <div className="text-center pt-1">
-              <Button className="bg-primary hover:bg-primary/90 text-secondary font-semibold w-full md:w-auto" asChild>
+            <div className="text-center">
+              <Button size="sm" className="bg-primary hover:bg-primary/90 text-secondary font-semibold w-full md:w-auto text-xs" asChild>
                 <a href={yandexEdaLink} target="_blank" rel="noopener noreferrer">
                   Хочу так зарабатывать
                   <Icon name="ArrowRight" size={18} className="ml-2" />
