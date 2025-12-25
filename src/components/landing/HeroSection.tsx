@@ -46,32 +46,32 @@ const HeroSection = ({ yandexEdaLink }: HeroSectionProps) => {
                     <Icon name="Menu" size={24} />
                   </Button>
                 </SheetTrigger>
-                <SheetContent side="right" className="w-72 p-6">
+                <SheetContent side="right" className="w-72 p-6 pl-12">
                   <div className="flex flex-col gap-6 mt-6">
                     <a 
                       href="#advantages" 
-                      className="text-lg font-medium hover:text-primary"
+                      className="text-lg font-medium hover:text-primary pl-4"
                       onClick={handleLinkClick}
                     >
                       Преимущества
                     </a>
                     <a 
                       href="#reviews" 
-                      className="text-lg font-medium hover:text-primary"
+                      className="text-lg font-medium hover:text-primary pl-4"
                       onClick={handleLinkClick}
                     >
                       Отзывы
                     </a>
                     <a 
                       href="#calculator" 
-                      className="text-lg font-medium hover:text-primary"
+                      className="text-lg font-medium hover:text-primary pl-4"
                       onClick={handleLinkClick}
                     >
                       Калькулятор
                     </a>
                     <a 
                       href="#faq" 
-                      className="text-lg font-medium hover:text-primary"
+                      className="text-lg font-medium hover:text-primary pl-4"
                       onClick={handleLinkClick}
                     >
                       Вопросы
