@@ -50,28 +50,28 @@ const HeroSection = ({ yandexEdaLink }: HeroSectionProps) => {
                   <nav className="flex flex-col gap-2 mt-2">
                     <a 
                       href="#advantages" 
-                      className="text-base font-medium hover:text-primary transition-colors py-2 px-3"
+                      className="text-base font-medium hover:text-primary transition-colors py-2 px-3 whitespace-nowrap"
                       onClick={handleLinkClick}
                     >
                       Преимущества
                     </a>
                     <a 
                       href="#reviews" 
-                      className="text-base font-medium hover:text-primary transition-colors py-2 px-3"
+                      className="text-base font-medium hover:text-primary transition-colors py-2 px-3 whitespace-nowrap"
                       onClick={handleLinkClick}
                     >
                       Отзывы
                     </a>
                     <a 
                       href="#calculator" 
-                      className="text-base font-medium hover:text-primary transition-colors py-2 px-3"
+                      className="text-base font-medium hover:text-primary transition-colors py-2 px-3 whitespace-nowrap"
                       onClick={handleLinkClick}
                     >
                       Калькулятор
                     </a>
                     <a 
                       href="#faq" 
-                      className="text-base font-medium hover:text-primary transition-colors py-2 px-3"
+                      className="text-base font-medium hover:text-primary transition-colors py-2 px-3 whitespace-nowrap"
                       onClick={handleLinkClick}
                     >
                       Вопросы
