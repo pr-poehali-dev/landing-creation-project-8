@@ -84,7 +84,7 @@ const HeroSection = ({ yandexEdaLink }: HeroSectionProps) => {
                           Стать курьером
                         </a>
                       </Button>
-                    </div>
+                    </nav>
                   </div>
                 </>
               )}
