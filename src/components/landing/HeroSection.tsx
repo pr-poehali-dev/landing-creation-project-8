@@ -51,10 +51,10 @@ const HeroSection = ({ yandexEdaLink }: HeroSectionProps) => {
               {isOpen && (
                 <>
                   <div 
-                    className="fixed inset-0 bg-black/80 z-40 md:hidden"
+                    className="fixed inset-0 bg-black/80 z-[999] md:hidden"
                     onClick={() => setIsOpen(false)}
                   />
-                  <div className="fixed top-0 right-0 bottom-0 w-[280px] bg-background shadow-lg z-50 p-6 md:hidden">
+                  <div className="fixed top-0 right-0 h-screen w-[280px] bg-background shadow-lg z-[1000] p-6 md:hidden overflow-y-auto">
                     <button 
                       onClick={() => setIsOpen(false)}
                       className="absolute right-4 top-4 rounded-sm opacity-70 hover:opacity-100"
