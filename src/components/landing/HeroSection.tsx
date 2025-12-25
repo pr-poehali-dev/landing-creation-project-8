@@ -46,7 +46,7 @@ const HeroSection = ({ yandexEdaLink }: HeroSectionProps) => {
                     <Icon name="Menu" size={24} />
                   </Button>
                 </SheetTrigger>
-                <SheetContent side="right" className="!w-[280px] !max-w-[280px] p-4 pb-5">
+                <SheetContent side="right" className="p-4 pb-5" style={{ width: '280px', maxWidth: '280px' }}>
                   <nav className="flex flex-col gap-1 mt-1">
                     <a 
                       href="#advantages" 
