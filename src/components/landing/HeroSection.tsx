@@ -1,7 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import Icon from '@/components/ui/icon';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { useState } from 'react';
 
 interface HeroSectionProps {
@@ -40,54 +39,66 @@ const HeroSection = ({ yandexEdaLink }: HeroSectionProps) => {
                 </a>
               </Button>
               
-              <Sheet open={isOpen} onOpenChange={setIsOpen}>
-                <SheetTrigger asChild>
-                  <Button variant="ghost" size="icon" className="md:hidden">
-                    <Icon name="Menu" size={24} />
-                  </Button>
-                </SheetTrigger>
-                <SheetContent side="right" className="w-80 p-6">
-                  <div className="flex flex-col gap-6 mt-6">
-                    <a 
-                      href="#advantages" 
-                      className="text-lg font-medium hover:text-primary block w-full"
-                      onClick={handleLinkClick}
-                      style={{ minWidth: '200px' }}
+              <Button 
+                variant="ghost" 
+                size="icon" 
+                className="md:hidden"
+                onClick={() => setIsOpen(!isOpen)}
+              >
+                <Icon name="Menu" size={24} />
+              </Button>
+              
+              {isOpen && (
+                <>
+                  <div 
+                    className="fixed inset-0 bg-black/80 z-40 md:hidden"
+                    onClick={() => setIsOpen(false)}
+                  />
+                  <div className="fixed top-0 right-0 bottom-0 w-[280px] bg-background shadow-lg z-50 p-6 md:hidden">
+                    <button 
+                      onClick={() => setIsOpen(false)}
+                      className="absolute right-4 top-4 rounded-sm opacity-70 hover:opacity-100"
                     >
-                      Преимущества
-                    </a>
-                    <a 
-                      href="#reviews" 
-                      className="text-lg font-medium hover:text-primary block w-full"
-                      onClick={handleLinkClick}
-                      style={{ minWidth: '200px' }}
-                    >
-                      Отзывы
-                    </a>
-                    <a 
-                      href="#calculator" 
-                      className="text-lg font-medium hover:text-primary block w-full"
-                      onClick={handleLinkClick}
-                      style={{ minWidth: '200px' }}
-                    >
-                      Калькулятор
-                    </a>
-                    <a 
-                      href="#faq" 
-                      className="text-lg font-medium hover:text-primary block w-full"
-                      onClick={handleLinkClick}
-                      style={{ minWidth: '200px' }}
-                    >
-                      Вопросы
-                    </a>
-                    <Button size="lg" className="bg-primary hover:bg-primary/90 text-secondary font-semibold mt-2" asChild>
-                      <a href={yandexEdaLink} target="_blank" rel="noopener noreferrer">
-                        Стать курьером
+                      <Icon name="X" size={20} />
+                    </button>
+                    <div className="flex flex-col gap-6 mt-12">
+                      <a 
+                        href="#advantages" 
+                        className="text-lg font-medium hover:text-primary"
+                        onClick={handleLinkClick}
+                      >
+                        Преимущества
                       </a>
-                    </Button>
+                      <a 
+                        href="#reviews" 
+                        className="text-lg font-medium hover:text-primary"
+                        onClick={handleLinkClick}
+                      >
+                        Отзывы
+                      </a>
+                      <a 
+                        href="#calculator" 
+                        className="text-lg font-medium hover:text-primary"
+                        onClick={handleLinkClick}
+                      >
+                        Калькулятор
+                      </a>
+                      <a 
+                        href="#faq" 
+                        className="text-lg font-medium hover:text-primary"
+                        onClick={handleLinkClick}
+                      >
+                        Вопросы
+                      </a>
+                      <Button size="lg" className="bg-primary hover:bg-primary/90 text-secondary font-semibold mt-2" asChild>
+                        <a href={yandexEdaLink} target="_blank" rel="noopener noreferrer">
+                          Стать курьером
+                        </a>
+                      </Button>
+                    </div>
                   </div>
-                </SheetContent>
-              </Sheet>
+                </>
+              )}
             </div>
           </div>
         </div>
