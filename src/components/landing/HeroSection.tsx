@@ -10,6 +10,13 @@ interface HeroSectionProps {
 const HeroSection = ({ yandexEdaLink }: HeroSectionProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const menuItems = [
+    { href: '#advantages', text: 'Преимущества' },
+    { href: '#reviews', text: 'Отзывы' },
+    { href: '#calculator', text: 'Калькулятор' },
+    { href: '#faq', text: 'Вопросы' }
+  ];
+
   const handleLinkClick = () => {
     setIsOpen(false);
   };
@@ -61,35 +68,17 @@ const HeroSection = ({ yandexEdaLink }: HeroSectionProps) => {
                     >
                       <Icon name="X" size={20} />
                     </button>
-                    <div className="flex flex-col gap-6 mt-12">
-                      <a 
-                        href="#advantages" 
-                        className="text-lg font-medium hover:text-primary"
-                        onClick={handleLinkClick}
-                      >
-                        Преимущества
-                      </a>
-                      <a 
-                        href="#reviews" 
-                        className="text-lg font-medium hover:text-primary"
-                        onClick={handleLinkClick}
-                      >
-                        Отзывы
-                      </a>
-                      <a 
-                        href="#calculator" 
-                        className="text-lg font-medium hover:text-primary"
-                        onClick={handleLinkClick}
-                      >
-                        Калькулятор
-                      </a>
-                      <a 
-                        href="#faq" 
-                        className="text-lg font-medium hover:text-primary"
-                        onClick={handleLinkClick}
-                      >
-                        Вопросы
-                      </a>
+                    <nav className="flex flex-col gap-6 mt-12">
+                      {menuItems.map((item) => (
+                        <a 
+                          key={item.href}
+                          href={item.href} 
+                          className="text-lg font-medium hover:text-primary"
+                          onClick={handleLinkClick}
+                        >
+                          {item.text}
+                        </a>
+                      ))}
                       <Button size="lg" className="bg-primary hover:bg-primary/90 text-secondary font-semibold mt-2" asChild>
                         <a href={yandexEdaLink} target="_blank" rel="noopener noreferrer">
                           Стать курьером
