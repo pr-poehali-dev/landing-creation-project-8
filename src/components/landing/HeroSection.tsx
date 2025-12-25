@@ -1,12 +1,20 @@
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import Icon from '@/components/ui/icon';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { useState } from 'react';
 
 interface HeroSectionProps {
   yandexEdaLink: string;
 }
 
 const HeroSection = ({ yandexEdaLink }: HeroSectionProps) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleLinkClick = () => {
+    setIsOpen(false);
+  };
+
   return (
     <>
       <header className="border-b border-border bg-background sticky top-0 z-50 backdrop-blur-sm bg-background/95">
@@ -24,11 +32,59 @@ const HeroSection = ({ yandexEdaLink }: HeroSectionProps) => {
               <a href="#calculator" className="text-sm font-medium hover:text-primary transition-colors">Калькулятор</a>
               <a href="#faq" className="text-sm font-medium hover:text-primary transition-colors">Вопросы</a>
             </nav>
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-secondary font-semibold animate-pulse-scale" asChild>
-              <a href={yandexEdaLink} target="_blank" rel="noopener noreferrer">
-                Стать курьером
-              </a>
-            </Button>
+            
+            <div className="flex items-center gap-3">
+              <Button size="lg" className="hidden md:flex bg-primary hover:bg-primary/90 text-secondary font-semibold animate-pulse-scale" asChild>
+                <a href={yandexEdaLink} target="_blank" rel="noopener noreferrer">
+                  Стать курьером
+                </a>
+              </Button>
+              
+              <Sheet open={isOpen} onOpenChange={setIsOpen}>
+                <SheetTrigger asChild>
+                  <Button variant="ghost" size="icon" className="md:hidden">
+                    <Icon name="Menu" size={24} />
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+                  <nav className="flex flex-col gap-6 mt-8">
+                    <a 
+                      href="#advantages" 
+                      className="text-lg font-medium hover:text-primary transition-colors"
+                      onClick={handleLinkClick}
+                    >
+                      Преимущества
+                    </a>
+                    <a 
+                      href="#reviews" 
+                      className="text-lg font-medium hover:text-primary transition-colors"
+                      onClick={handleLinkClick}
+                    >
+                      Отзывы
+                    </a>
+                    <a 
+                      href="#calculator" 
+                      className="text-lg font-medium hover:text-primary transition-colors"
+                      onClick={handleLinkClick}
+                    >
+                      Калькулятор
+                    </a>
+                    <a 
+                      href="#faq" 
+                      className="text-lg font-medium hover:text-primary transition-colors"
+                      onClick={handleLinkClick}
+                    >
+                      Вопросы
+                    </a>
+                    <Button size="lg" className="bg-primary hover:bg-primary/90 text-secondary font-semibold mt-4" asChild>
+                      <a href={yandexEdaLink} target="_blank" rel="noopener noreferrer">
+                        Стать курьером
+                      </a>
+                    </Button>
+                  </nav>
+                </SheetContent>
+              </Sheet>
+            </div>
           </div>
         </div>
       </header>
