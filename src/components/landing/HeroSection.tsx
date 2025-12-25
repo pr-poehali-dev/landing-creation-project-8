@@ -73,8 +73,9 @@ const HeroSection = ({ yandexEdaLink }: HeroSectionProps) => {
                         <a 
                           key={item.href}
                           href={item.href} 
-                          className="text-lg font-medium hover:text-primary"
+                          className="text-lg font-medium hover:text-primary block"
                           onClick={handleLinkClick}
+                          style={{ lineHeight: '2', minHeight: '40px', display: 'flex', alignItems: 'center' }}
                         >
                           {item.text}
                         </a>
