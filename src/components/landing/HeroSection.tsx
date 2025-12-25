@@ -46,37 +46,37 @@ const HeroSection = ({ yandexEdaLink }: HeroSectionProps) => {
                     <Icon name="Menu" size={24} />
                   </Button>
                 </SheetTrigger>
-                <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-                  <nav className="flex flex-col gap-6 mt-8">
+                <SheetContent side="right" className="w-[250px] p-4">
+                  <nav className="flex flex-col gap-3 mt-4">
                     <a 
                       href="#advantages" 
-                      className="text-lg font-medium hover:text-primary transition-colors"
+                      className="text-base font-medium hover:text-primary transition-colors py-2"
                       onClick={handleLinkClick}
                     >
                       Преимущества
                     </a>
                     <a 
                       href="#reviews" 
-                      className="text-lg font-medium hover:text-primary transition-colors"
+                      className="text-base font-medium hover:text-primary transition-colors py-2"
                       onClick={handleLinkClick}
                     >
                       Отзывы
                     </a>
                     <a 
                       href="#calculator" 
-                      className="text-lg font-medium hover:text-primary transition-colors"
+                      className="text-base font-medium hover:text-primary transition-colors py-2"
                       onClick={handleLinkClick}
                     >
                       Калькулятор
                     </a>
                     <a 
                       href="#faq" 
-                      className="text-lg font-medium hover:text-primary transition-colors"
+                      className="text-base font-medium hover:text-primary transition-colors py-2"
                       onClick={handleLinkClick}
                     >
                       Вопросы
                     </a>
-                    <Button size="lg" className="bg-primary hover:bg-primary/90 text-secondary font-semibold mt-4" asChild>
+                    <Button size="default" className="bg-primary hover:bg-primary/90 text-secondary font-semibold mt-2" asChild>
                       <a href={yandexEdaLink} target="_blank" rel="noopener noreferrer">
                         Стать курьером
                       </a>
