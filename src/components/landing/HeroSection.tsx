@@ -46,7 +46,7 @@ const HeroSection = ({ yandexEdaLink }: HeroSectionProps) => {
                     <Icon name="Menu" size={24} />
                   </Button>
                 </SheetTrigger>
-                <SheetContent side="right" className="p-6 pb-8 overflow-visible" style={{ width: '90vw', maxWidth: '400px', minWidth: '300px' }}>
+                <SheetContent side="right" className="p-6 pb-8 !overflow-visible" style={{ width: '90vw', maxWidth: '400px', minWidth: '300px', overflow: 'visible' }}>
                   <nav className="flex flex-col gap-4 mt-4 w-full">
                     <a 
                       href="#advantages" 
