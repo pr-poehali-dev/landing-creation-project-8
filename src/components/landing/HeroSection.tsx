@@ -46,42 +46,42 @@ const HeroSection = ({ yandexEdaLink }: HeroSectionProps) => {
                     <Icon name="Menu" size={24} />
                   </Button>
                 </SheetTrigger>
-                <SheetContent side="right" className="p-6 pb-8" style={{ width: '85vw', maxWidth: '360px' }}>
-                  <nav className="flex flex-col gap-4 mt-4">
+                <SheetContent side="right" className="w-72 p-6">
+                  <div className="flex flex-col gap-6 mt-6">
                     <a 
                       href="#advantages" 
-                      className="text-base font-medium hover:text-primary transition-colors py-3 block"
+                      className="text-lg font-medium hover:text-primary"
                       onClick={handleLinkClick}
                     >
                       Преимущества
                     </a>
                     <a 
                       href="#reviews" 
-                      className="text-base font-medium hover:text-primary transition-colors py-3 block"
+                      className="text-lg font-medium hover:text-primary"
                       onClick={handleLinkClick}
                     >
                       Отзывы
                     </a>
                     <a 
                       href="#calculator" 
-                      className="text-base font-medium hover:text-primary transition-colors py-3 block"
+                      className="text-lg font-medium hover:text-primary"
                       onClick={handleLinkClick}
                     >
                       Калькулятор
                     </a>
                     <a 
                       href="#faq" 
-                      className="text-base font-medium hover:text-primary transition-colors py-3 block"
+                      className="text-lg font-medium hover:text-primary"
                       onClick={handleLinkClick}
                     >
                       Вопросы
                     </a>
-                    <Button size="default" className="bg-primary hover:bg-primary/90 text-secondary font-semibold mt-4 w-full" asChild>
+                    <Button size="lg" className="bg-primary hover:bg-primary/90 text-secondary font-semibold mt-2" asChild>
                       <a href={yandexEdaLink} target="_blank" rel="noopener noreferrer">
                         Стать курьером
                       </a>
                     </Button>
-                  </nav>
+                  </div>
                 </SheetContent>
               </Sheet>
             </div>
