@@ -46,32 +46,32 @@ const HeroSection = ({ yandexEdaLink }: HeroSectionProps) => {
                     <Icon name="Menu" size={24} />
                   </Button>
                 </SheetTrigger>
-                <SheetContent side="right" className="p-6 pb-8 !overflow-visible" style={{ width: '90vw', maxWidth: '400px', minWidth: '300px', overflow: 'visible' }}>
-                  <nav className="flex flex-col gap-4 mt-4 w-full">
+                <SheetContent side="right" className="p-6 pb-8" style={{ width: '85vw', maxWidth: '360px' }}>
+                  <nav className="flex flex-col gap-4 mt-4">
                     <a 
                       href="#advantages" 
-                      className="text-base font-medium hover:text-primary transition-colors py-3 px-3 whitespace-nowrap"
+                      className="text-base font-medium hover:text-primary transition-colors py-3 block"
                       onClick={handleLinkClick}
                     >
                       Преимущества
                     </a>
                     <a 
                       href="#reviews" 
-                      className="text-base font-medium hover:text-primary transition-colors py-3 px-3 whitespace-nowrap"
+                      className="text-base font-medium hover:text-primary transition-colors py-3 block"
                       onClick={handleLinkClick}
                     >
                       Отзывы
                     </a>
                     <a 
                       href="#calculator" 
-                      className="text-base font-medium hover:text-primary transition-colors py-3 px-3 whitespace-nowrap"
+                      className="text-base font-medium hover:text-primary transition-colors py-3 block"
                       onClick={handleLinkClick}
                     >
                       Калькулятор
                     </a>
                     <a 
                       href="#faq" 
-                      className="text-base font-medium hover:text-primary transition-colors py-3 px-3 whitespace-nowrap"
+                      className="text-base font-medium hover:text-primary transition-colors py-3 block"
                       onClick={handleLinkClick}
                     >
                       Вопросы
