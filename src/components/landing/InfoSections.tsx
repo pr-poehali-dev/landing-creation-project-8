@@ -107,11 +107,21 @@ const InfoSections = ({ yandexEdaLink }: InfoSectionsProps) => {
         </div>
       </section>
 
-      <section className="py-16 md:py-20 bg-muted/50">
-        <div className="container mx-auto px-4 md:px-6">
+      <section className="py-16 md:py-20 relative overflow-hidden">
+        <div 
+          className="absolute inset-0"
+          style={{
+            backgroundImage: 'url(https://cdn.poehali.dev/files/images.jpg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            filter: 'brightness(0.4)',
+          }}
+        ></div>
+        <div className="absolute inset-0 bg-background/60"></div>
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Что нужно для старта</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Что нужно для старта</h2>
+            <p className="text-lg text-white/90 max-w-2xl mx-auto">
               Минимальные требования к курьерам
             </p>
           </div>
@@ -148,7 +158,7 @@ const InfoSections = ({ yandexEdaLink }: InfoSectionsProps) => {
                 description: 'Для получения выплат'
               }
             ].map((req, index) => (
-              <Card key={index} className="border-border hover:shadow-md transition-shadow">
+              <Card key={index} className="border-white/20 bg-white/95 backdrop-blur-sm hover:shadow-lg transition-shadow">
                 <CardHeader>
                   <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-3">
                     <Icon name={req.icon} size={24} className="text-primary" />
