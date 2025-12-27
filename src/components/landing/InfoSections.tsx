@@ -113,7 +113,7 @@ const InfoSections = ({ yandexEdaLink }: InfoSectionsProps) => {
           style={{
             backgroundImage: 'url(https://cdn.poehali.dev/files/images.jpg)',
             backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            backgroundPosition: 'center 65%',
             filter: 'brightness(0.5)',
           }}
         ></div>
