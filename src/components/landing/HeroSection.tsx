@@ -120,12 +120,12 @@ const HeroSection = ({ yandexEdaLink }: HeroSectionProps) => {
           style={{
             backgroundImage: 'url(https://cdn.poehali.dev/files/bbc98ddfe32811f0803f121ccd90150b_1.jpg)',
             backgroundSize: 'cover',
-            backgroundPosition: '90% 30%',
-            filter: 'contrast(1.8) saturate(1.5) brightness(1.35)',
+            backgroundPosition: '40% center',
+            filter: 'none',
             imageRendering: 'auto',
           }}
         ></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/60 to-transparent"></div>
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in">
