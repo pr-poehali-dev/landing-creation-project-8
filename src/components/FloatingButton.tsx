@@ -11,7 +11,7 @@ const FloatingButton = ({ yandexEdaLink }: FloatingButtonProps) => {
 
   const handleClick = () => {
     if (typeof window !== 'undefined' && (window as any).ym) {
-      (window as any).ym(105912288, 'reachGoal', 'floating_button_click');
+      (window as any).ym(105912288, 'reachGoal', 'klik_na_knopku_zayavki');
     }
   };
 

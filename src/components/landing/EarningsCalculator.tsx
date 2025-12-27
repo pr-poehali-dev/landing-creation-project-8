@@ -144,7 +144,7 @@ const EarningsCalculator = ({ yandexEdaLink }: EarningsCalculatorProps) => {
                   rel="noopener noreferrer"
                   onClick={() => {
                     if (typeof window !== 'undefined' && (window as any).ym) {
-                      (window as any).ym(105912288, 'reachGoal', 'calculator_button_click');
+                      (window as any).ym(105912288, 'reachGoal', 'ispolzovanie_kalkulyatora');
                     }
                   }}
                 >
