@@ -137,7 +137,7 @@ const HeroSection = ({ yandexEdaLink }: HeroSectionProps) => {
                 <span className="text-primary">до 270 000 ₽</span><br />
                 в месяц
               </h1>
-              <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
+              <p className="text-lg md:text-xl mb-8 leading-relaxed text-[#000000]">
                 Работай курьером в Яндекс Еде — выбирай удобный график, получай деньги сразу и бонусы за каждый заказ
               </p>
               <Button size="lg" className="bg-primary hover:bg-primary/90 text-secondary font-semibold h-14 px-8 text-base mb-6 animate-pulse-scale" asChild>
