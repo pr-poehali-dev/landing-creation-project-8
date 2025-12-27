@@ -120,9 +120,9 @@ const HeroSection = ({ yandexEdaLink }: HeroSectionProps) => {
           style={{
             backgroundImage: 'url(https://cdn.poehali.dev/files/bbc98ddfe32811f0803f121ccd90150b_1.jpg)',
             backgroundSize: 'cover',
-            backgroundPosition: '75% 30%',
-            filter: 'contrast(1.5) saturate(1.3) brightness(1.3)',
-            imageRendering: '-webkit-optimize-contrast',
+            backgroundPosition: '82% 30%',
+            filter: 'contrast(1.7) saturate(1.4) brightness(1.3) sharpen(1.2)',
+            imageRendering: 'crisp-edges',
           }}
         ></div>
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/40"></div>
