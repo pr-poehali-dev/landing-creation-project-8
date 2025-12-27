@@ -138,7 +138,16 @@ const EarningsCalculator = ({ yandexEdaLink }: EarningsCalculatorProps) => {
 
             <div className="text-center">
               <Button size="sm" className="bg-primary hover:bg-primary/90 text-secondary font-bold w-full md:w-auto animate-pulse-scale text-xs h-8" asChild>
-                <a href={yandexEdaLink} target="_blank" rel="noopener noreferrer">
+                <a 
+                  href={yandexEdaLink} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  onClick={() => {
+                    if (typeof window !== 'undefined' && (window as any).ym) {
+                      (window as any).ym(105912288, 'reachGoal', 'calculator_button_click');
+                    }
+                  }}
+                >
                   Хочу так зарабатывать
                   <Icon name="ArrowRight" size={18} className="ml-2" />
                 </a>

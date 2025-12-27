@@ -222,7 +222,16 @@ const InfoSections = ({ yandexEdaLink }: InfoSectionsProps) => {
               Нажми на кнопку ниже, заполни простую анкету и начни работать уже через 3 дня
             </p>
             <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-white font-semibold h-14 px-8 animate-pulse-scale" asChild>
-              <a href={yandexEdaLink} target="_blank" rel="noopener noreferrer">
+              <a 
+                href={yandexEdaLink} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                onClick={() => {
+                  if (typeof window !== 'undefined' && (window as any).ym) {
+                    (window as any).ym(105912288, 'reachGoal', 'cta_button_click');
+                  }
+                }}
+              >
                 Заполнить анкету
                 <Icon name="ExternalLink" size={20} className="ml-2" />
               </a>

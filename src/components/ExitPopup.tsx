@@ -15,6 +15,9 @@ const ExitPopup = ({ yandexEdaLink }: ExitPopupProps) => {
       if (e.clientY <= 0 && !hasShown) {
         setIsVisible(true);
         setHasShown(true);
+        if (typeof window !== 'undefined' && (window as any).ym) {
+          (window as any).ym(105912288, 'reachGoal', 'exit_popup_shown');
+        }
       }
     };
 
@@ -61,7 +64,16 @@ const ExitPopup = ({ yandexEdaLink }: ExitPopupProps) => {
                 className="w-full bg-primary hover:bg-primary/90 text-secondary font-bold h-14 text-base animate-pulse-scale"
                 asChild
               >
-                <a href={yandexEdaLink} target="_blank" rel="noopener noreferrer">
+                <a 
+                  href={yandexEdaLink} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  onClick={() => {
+                    if (typeof window !== 'undefined' && (window as any).ym) {
+                      (window as any).ym(105912288, 'reachGoal', 'exit_popup_click');
+                    }
+                  }}
+                >
                   Получить бонус 500₽
                   <Icon name="Gift" size={20} className="ml-2" />
                 </a>

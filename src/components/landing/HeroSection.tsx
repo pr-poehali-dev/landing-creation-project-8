@@ -41,7 +41,16 @@ const HeroSection = ({ yandexEdaLink }: HeroSectionProps) => {
             
             <div className="flex items-center gap-3">
               <Button size="lg" className="hidden md:flex bg-primary hover:bg-primary/90 text-secondary font-semibold animate-pulse-scale" asChild>
-                <a href={yandexEdaLink} target="_blank" rel="noopener noreferrer">
+                <a 
+                  href={yandexEdaLink} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  onClick={() => {
+                    if (typeof window !== 'undefined' && (window as any).ym) {
+                      (window as any).ym(105912288, 'reachGoal', 'header_button_click');
+                    }
+                  }}
+                >
                   Стать курьером
                 </a>
               </Button>
@@ -81,7 +90,16 @@ const HeroSection = ({ yandexEdaLink }: HeroSectionProps) => {
                         </a>
                       ))}
                       <Button size="lg" className="bg-primary hover:bg-primary/90 text-secondary font-semibold mt-2" asChild>
-                        <a href={yandexEdaLink} target="_blank" rel="noopener noreferrer">
+                        <a 
+                          href={yandexEdaLink} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          onClick={() => {
+                            if (typeof window !== 'undefined' && (window as any).ym) {
+                              (window as any).ym(105912288, 'reachGoal', 'mobile_menu_button_click');
+                            }
+                          }}
+                        >
                           Стать курьером
                         </a>
                       </Button>
@@ -123,7 +141,16 @@ const HeroSection = ({ yandexEdaLink }: HeroSectionProps) => {
                 Работай курьером в Яндекс Еде — выбирай удобный график, получай деньги сразу и бонусы за каждый заказ
               </p>
               <Button size="lg" className="bg-primary hover:bg-primary/90 text-secondary font-semibold h-14 px-8 text-base mb-6 animate-pulse-scale" asChild>
-                <a href={yandexEdaLink} target="_blank" rel="noopener noreferrer">
+                <a 
+                  href={yandexEdaLink} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  onClick={() => {
+                    if (typeof window !== 'undefined' && (window as any).ym) {
+                      (window as any).ym(105912288, 'reachGoal', 'hero_button_click');
+                    }
+                  }}
+                >
                   Подать заявку
                   <Icon name="ArrowRight" size={20} className="ml-2" />
                 </a>

@@ -9,6 +9,12 @@ interface FloatingButtonProps {
 const FloatingButton = ({ yandexEdaLink }: FloatingButtonProps) => {
   const [isVisible, setIsVisible] = useState(false);
 
+  const handleClick = () => {
+    if (typeof window !== 'undefined' && (window as any).ym) {
+      (window as any).ym(105912288, 'reachGoal', 'floating_button_click');
+    }
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 300) {
@@ -33,7 +39,7 @@ const FloatingButton = ({ yandexEdaLink }: FloatingButtonProps) => {
         className="bg-primary hover:bg-primary/90 text-secondary font-bold shadow-2xl animate-pulse-scale h-14 px-6"
         asChild
       >
-        <a href={yandexEdaLink} target="_blank" rel="noopener noreferrer">
+        <a href={yandexEdaLink} target="_blank" rel="noopener noreferrer" onClick={handleClick}>
           <span className="hidden sm:inline">Стать курьером</span>
           <span className="sm:hidden">Подать заявку</span>
           <Icon name="ArrowRight" size={20} className="ml-2" />

@@ -69,7 +69,16 @@ const ReviewsSection = ({ yandexEdaLink }: ReviewsSectionProps) => {
         </div>
         <div className="text-center">
           <Button size="lg" className="bg-primary hover:bg-primary/90 text-secondary font-semibold" asChild>
-            <a href={yandexEdaLink} target="_blank" rel="noopener noreferrer">
+            <a 
+              href={yandexEdaLink} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              onClick={() => {
+                if (typeof window !== 'undefined' && (window as any).ym) {
+                  (window as any).ym(105912288, 'reachGoal', 'reviews_button_click');
+                }
+              }}
+            >
               Я тоже хочу так зарабатывать
               <Icon name="ArrowRight" size={20} className="ml-2" />
             </a>
