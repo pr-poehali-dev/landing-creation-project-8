@@ -3,6 +3,7 @@ import VacancyCounter from '@/components/landing/VacancyCounter';
 import EarningsCalculator from '@/components/landing/EarningsCalculator';
 import ReviewsSection from '@/components/landing/ReviewsSection';
 import InfoSections from '@/components/landing/InfoSections';
+import StatsSection from '@/components/landing/StatsSection';
 import Footer from '@/components/landing/Footer';
 import FloatingButton from '@/components/FloatingButton';
 import ExitPopup from '@/components/ExitPopup';
@@ -21,6 +22,7 @@ const Index = () => {
       <InfoSections yandexEdaLink={YANDEX_EDA_LINK} />
       <ReviewsSection yandexEdaLink={YANDEX_EDA_LINK} />
       <EarningsCalculator yandexEdaLink={YANDEX_EDA_LINK} />
+      <StatsSection />
       <Footer />
       
       <FloatingButton yandexEdaLink={YANDEX_EDA_LINK} />
