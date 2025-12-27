@@ -120,7 +120,7 @@ const HeroSection = ({ yandexEdaLink }: HeroSectionProps) => {
           style={{
             backgroundImage: 'url(https://cdn.poehali.dev/files/bbc98ddfe32811f0803f121ccd90150b_1.jpg)',
             backgroundSize: 'cover',
-            backgroundPosition: '65% 35%',
+            backgroundPosition: 'center center',
             filter: 'none',
             imageRendering: 'auto',
           }}
