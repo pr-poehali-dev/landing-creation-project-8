@@ -19,9 +19,13 @@ const Index = () => {
         <VacancyCounter />
       </section>
       
-      <InfoSections yandexEdaLink={YANDEX_EDA_LINK} />
+      <div id="benefits">
+        <InfoSections yandexEdaLink={YANDEX_EDA_LINK} />
+      </div>
       <ReviewsSection yandexEdaLink={YANDEX_EDA_LINK} />
-      <EarningsCalculator yandexEdaLink={YANDEX_EDA_LINK} />
+      <div id="application-form">
+        <EarningsCalculator yandexEdaLink={YANDEX_EDA_LINK} />
+      </div>
       <StatsSection />
       <Footer />
       
