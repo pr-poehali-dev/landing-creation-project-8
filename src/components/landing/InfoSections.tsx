@@ -114,10 +114,10 @@ const InfoSections = ({ yandexEdaLink }: InfoSectionsProps) => {
             backgroundImage: 'url(https://cdn.poehali.dev/files/images.jpg)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            filter: 'brightness(0.4)',
+            filter: 'brightness(0.5)',
           }}
         ></div>
-        <div className="absolute inset-0 bg-background/60"></div>
+        <div className="absolute inset-0 bg-background/40"></div>
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Что нужно для старта</h2>
