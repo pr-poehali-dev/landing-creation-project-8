@@ -119,8 +119,9 @@ const HeroSection = ({ yandexEdaLink }: HeroSectionProps) => {
           className="absolute inset-0"
           style={{
             backgroundImage: 'url(https://cdn.poehali.dev/files/bbc98ddfe32811f0803f121ccd90150b_1.jpg)',
-            backgroundSize: 'cover',
-            backgroundPosition: '85% 75%',
+            backgroundSize: 'auto 100%',
+            backgroundPosition: 'center center',
+            backgroundRepeat: 'no-repeat',
             filter: 'none',
             imageRendering: 'auto',
           }}
