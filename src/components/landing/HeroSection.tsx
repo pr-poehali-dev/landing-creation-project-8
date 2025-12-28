@@ -126,7 +126,8 @@ const HeroSection = ({ yandexEdaLink }: HeroSectionProps) => {
             imageRendering: 'auto',
           }}
         ></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/40 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-transparent to-transparent"></div>
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in">
