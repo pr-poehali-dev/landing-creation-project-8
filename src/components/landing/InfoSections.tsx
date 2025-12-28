@@ -114,6 +114,17 @@ const InfoSections = ({ yandexEdaLink }: InfoSectionsProps) => {
             backgroundImage: 'url(https://cdn.poehali.dev/files/images.jpg)',
             backgroundSize: 'cover',
             backgroundPosition: 'center center',
+            filter: 'brightness(0.5) blur(8px)',
+            transform: 'scale(1.1)',
+          }}
+        ></div>
+        <div 
+          className="absolute inset-0"
+          style={{
+            backgroundImage: 'url(https://cdn.poehali.dev/files/images.jpg)',
+            backgroundSize: 'auto 100%',
+            backgroundPosition: 'center center',
+            backgroundRepeat: 'no-repeat',
             filter: 'brightness(0.5)',
           }}
         ></div>
