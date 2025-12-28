@@ -125,7 +125,7 @@ const InfoSections = ({ yandexEdaLink }: InfoSectionsProps) => {
             backgroundSize: 'auto 100%',
             backgroundPosition: 'center center',
             backgroundRepeat: 'no-repeat',
-            filter: 'brightness(0.5)',
+            filter: 'none',
           }}
         ></div>
         <div className="absolute inset-0 bg-background/40"></div>
