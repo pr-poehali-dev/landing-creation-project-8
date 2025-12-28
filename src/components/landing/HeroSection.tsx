@@ -122,7 +122,7 @@ const HeroSection = ({ yandexEdaLink }: HeroSectionProps) => {
             backgroundSize: 'cover',
             backgroundPosition: 'center center',
             backgroundRepeat: 'no-repeat',
-            filter: 'blur(20px)',
+            filter: 'blur(8px)',
             imageRendering: 'auto',
             transform: 'scale(1.1)',
           }}
