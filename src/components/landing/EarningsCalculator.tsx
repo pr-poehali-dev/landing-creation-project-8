@@ -2,17 +2,46 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Slider } from '@/components/ui/slider';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
+import { Checkbox } from '@/components/ui/checkbox';
 import Icon from '@/components/ui/icon';
 
 type CourierType = 'walk' | 'bike' | 'car';
+
+const CITIES = [
+  'Москва',
+  'Санкт-Петербург',
+  'Новосибирск',
+  'Екатеринбург',
+  'Казань',
+  'Нижний Новгород',
+  'Челябинск',
+  'Самара',
+  'Омск',
+  'Ростов-на-Дону',
+  'Уфа',
+  'Красноярск',
+  'Воронеж',
+  'Пермь',
+  'Волгоград'
+];
 
 interface EarningsCalculatorProps {
   yandexEdaLink: string;
 }
 
 const EarningsCalculator = ({ yandexEdaLink }: EarningsCalculatorProps) => {
-  const [courierType, setCourierType] = useState<CourierType>('bike');
-  const [hoursPerDay, setHoursPerDay] = useState([6]);
+  const [courierType, setCourierType] = useState<CourierType>('car');
+  const [hoursPerDay, setHoursPerDay] = useState([5]);
+  const [daysPerMonth, setDaysPerMonth] = useState([20]);
+  const [selectedCity, setSelectedCity] = useState('Москва');
+  const [includeReferralBonus, setIncludeReferralBonus] = useState(false);
 
   const courierData = {
     walk: {
@@ -37,22 +66,37 @@ const EarningsCalculator = ({ yandexEdaLink }: EarningsCalculatorProps) => {
 
   const currentData = courierData[courierType];
   const hours = hoursPerDay[0];
+  const days = daysPerMonth[0];
   const ordersPerDay = currentData.ordersPerHour * hours;
   const earningsPerDay = ordersPerDay * currentData.pricePerOrder;
-  const earningsPerMonth = earningsPerDay * 22;
+  const earningsPerMonth = earningsPerDay * days;
+  const referralBonus = 100000;
+  const totalEarnings = includeReferralBonus ? earningsPerMonth + referralBonus : earningsPerMonth;
 
   return (
     <section id="calculator" className="py-8 md:py-12 bg-gradient-to-b from-primary/5 to-background">
       <div className="container mx-auto px-4 md:px-6 max-w-7xl">
         <div className="text-center mb-6">
-          <h2 className="text-2xl md:text-3xl font-bold mb-2">Калькулятор заработка</h2>
-          <p className="text-sm text-muted-foreground">
-            Рассчитай свой потенциальный доход за месяц
-          </p>
+          <h2 className="text-2xl md:text-3xl font-bold mb-2">Рассчитайте ваш доход</h2>
         </div>
         
         <Card className="mx-auto border-2 border-primary/30 shadow-2xl bg-background">
           <CardHeader className="text-center pb-1.5 pt-2">
+            <div className="mb-3">
+              <h3 className="text-sm md:text-base font-bold mb-2">Выберите ваш город</h3>
+              <Select value={selectedCity} onValueChange={setSelectedCity}>
+                <SelectTrigger className="w-full">
+                  <SelectValue placeholder="Выберите город" />
+                </SelectTrigger>
+                <SelectContent>
+                  {CITIES.map((city) => (
+                    <SelectItem key={city} value={city}>
+                      {city}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
             <h3 className="text-sm md:text-base font-bold mb-1.5">Выбери тип курьера</h3>
             <div className="grid grid-cols-3 gap-2 md:gap-4">
               {(Object.keys(courierData) as CourierType[]).map((type) => (
@@ -81,7 +125,7 @@ const EarningsCalculator = ({ yandexEdaLink }: EarningsCalculatorProps) => {
           <CardContent className="space-y-1.5 pb-2">
             <div className="bg-muted/20 rounded p-1.5">
               <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-1 md:gap-0 mb-1">
-                <label className="text-[11px] md:text-xs font-bold">Сколько часов готов работать?</label>
+                <label className="text-[11px] md:text-xs font-bold">Часов в день</label>
                 <div className="flex items-center gap-1 rounded px-1.5 py-0.5 bg-primary self-start">
                   <span className="text-base md:text-lg font-bold text-secondary">{hours}</span>
                   <span className="text-[10px] text-secondary font-bold">ч/день</span>
@@ -98,6 +142,28 @@ const EarningsCalculator = ({ yandexEdaLink }: EarningsCalculatorProps) => {
               <div className="flex justify-between text-[9px] text-muted-foreground mt-0.5">
                 <span>1 час</span>
                 <span>12 часов</span>
+              </div>
+            </div>
+
+            <div className="bg-muted/20 rounded p-1.5">
+              <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-1 md:gap-0 mb-1">
+                <label className="text-[11px] md:text-xs font-bold">Дней в месяц</label>
+                <div className="flex items-center gap-1 rounded px-1.5 py-0.5 bg-primary self-start">
+                  <span className="text-base md:text-lg font-bold text-secondary">{days}</span>
+                  <span className="text-[10px] text-secondary font-bold">дн/мес</span>
+                </div>
+              </div>
+              <Slider
+                value={daysPerMonth}
+                onValueChange={setDaysPerMonth}
+                min={1}
+                max={30}
+                step={1}
+                className="w-full"
+              />
+              <div className="flex justify-between text-[9px] text-muted-foreground mt-0.5">
+                <span>1 день</span>
+                <span>30 дней</span>
               </div>
             </div>
 
@@ -129,10 +195,34 @@ const EarningsCalculator = ({ yandexEdaLink }: EarningsCalculatorProps) => {
                 <div className="text-center">
                   <p className="text-[9px] font-semibold mb-0">Доход в месяц</p>
                   <p className="text-xl md:text-2xl font-bold mb-0.5">
-                    {earningsPerMonth.toLocaleString('ru-RU')} ₽
+                    {totalEarnings.toLocaleString('ru-RU')} ₽
                   </p>
-                  <p className="text-[9px] text-secondary/90">при 22 рабочих днях</p>
+                  <p className="text-[9px] text-secondary/90">при {days} рабочих днях</p>
                 </div>
+              </div>
+            </div>
+
+            <div className="bg-muted/20 rounded p-2 flex items-start gap-2">
+              <Checkbox
+                id="referral-bonus"
+                checked={includeReferralBonus}
+                onCheckedChange={(checked) => setIncludeReferralBonus(checked === true)}
+              />
+              <div className="flex-1">
+                <label
+                  htmlFor="referral-bonus"
+                  className="text-xs font-semibold cursor-pointer leading-tight"
+                >
+                  + {referralBonus.toLocaleString('ru-RU')} ₽ за каждого привлеченного вами нового курьера
+                </label>
+                <a
+                  href="https://eda.yandex.ru/partner/rabota/cpa"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[10px] text-primary hover:underline inline-block mt-0.5"
+                >
+                  Подробнее
+                </a>
               </div>
             </div>
 
