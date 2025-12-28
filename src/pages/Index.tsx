@@ -15,10 +15,6 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <HeroSection yandexEdaLink={YANDEX_EDA_LINK} />
       
-      <section className="container mx-auto px-4 md:px-6 py-8 md:py-12">
-        <VacancyCounter />
-      </section>
-      
       <div id="benefits">
         <InfoSections yandexEdaLink={YANDEX_EDA_LINK} />
       </div>
