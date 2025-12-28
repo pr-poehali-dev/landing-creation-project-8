@@ -155,18 +155,18 @@ const HeroSection = ({ yandexEdaLink }: HeroSectionProps) => {
                   <Icon name="ArrowRight" size={20} className="ml-2" />
                 </a>
               </Button>
-              <div className="flex flex-wrap gap-6 text-sm text-muted-foreground">
+              <div className="flex flex-wrap gap-6 text-sm">
                 <div className="flex items-center gap-2">
                   <Icon name="Check" size={18} className="text-primary" />
-                  <span>Быстрое оформление</span>
+                  <span className="text-black font-semibold">Быстрое оформление</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Icon name="Check" size={18} className="text-primary" />
-                  <span>Без опыта</span>
+                  <span className="text-black font-semibold">Без опыта</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Icon name="Check" size={18} className="text-primary" />
-                  <span>Старт за 3 дня</span>
+                  <span className="text-black font-semibold">Старт за 3 дня</span>
                 </div>
               </div>
             </div>
