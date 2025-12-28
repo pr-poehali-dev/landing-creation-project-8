@@ -216,7 +216,7 @@ const EarningsCalculator = ({ yandexEdaLink }: EarningsCalculatorProps) => {
                   + {referralBonus.toLocaleString('ru-RU')} ₽ за каждого привлеченного вами нового курьера
                 </label>
                 <a
-                  href="https://pro.yandex.ru/help/eda/pro-partners/intro.html"
+                  href="https://eda.yandex.ru/partner/rabota/cpa"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[10px] text-primary hover:underline inline-block mt-0.5"
